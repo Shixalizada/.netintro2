@@ -1,52 +1,48 @@
-# Prerequisites
-*.d
+while (true)
+{
+    Console.Write("Enter num1: ");
+    double num1 = Convert.ToDouble(Console.ReadLine());
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+    Console.Write("Enter num2: ");
+    double num2 = Convert.ToDouble(Console.ReadLine());
 
-# Linker output
-*.ilk
-*.map
-*.exp
+    Console.WriteLine("Choose an operation +, -, *, /: ");
+    char operation = Convert.ToChar(Console.ReadLine());
+    Console.WriteLine();
 
-# Precompiled Headers
-*.gch
-*.pch
+    double result;
+    switch (operation)
+    {
+        case '+':
+            result = num1 + num2;
+            Console.WriteLine($" {num1} + {num2} = {result}");
+            break;
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+        case '-':
+            result = num1 - num2;
+            Console.WriteLine($" {num1} - {num2} = {result}");
+            break;
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+        case '*':
+            result = num1 * num2;
+            Console.WriteLine($" {num1} * {num2} = {result}");
+            break;
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+        case '/':
+            if (num2 != 0)
+            {
+                result = num1 / num2;
+                Console.WriteLine($" {num1} / {num2} = {result}");
+            }
+            else
+            {
+                Console.WriteLine("No by division zero.");
+            }
+            break;
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+        default:
+            Console.WriteLine("Invalid operation!!!");
+            break;
+    }
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+}
